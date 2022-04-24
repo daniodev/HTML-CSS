@@ -1,0 +1,67 @@
+html{
+    background-color:#60888e;
+    ; 
+}
+
+.titolo{
+    text-align: center;
+    color: white;
+    padding-top: 100px;
+    font-family: 'Calibri';
+}
+.titolo_h3{
+    text-align: center;
+    color: white;
+    font-family: 'Calibri'; 
+}
+
+.inserts {
+    text-align: center;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    color: black;
+    text-decoration: none;
+    line-height: 1.2;
+    font-weight: normal;
+    font-family: sans-serif;
+    font-size: 18px;
+    background-color: #60888e;
+    border-radius: 20px;
+    padding: 10px 16px;
+    border: 2px solid #60888e;
+    cursor: pointer;
+   
+    
+   }
+   
+   
+.inserts:hover {
+    background-color: white;
+}
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 8rem;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+  
+  footer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    background-color: gray;
+    top: 1200px;
+    padding-bottom: 200px;
+    text-align: center;
+  }
+
+.testo{
+    font-family: 'Calibri';
+    text-align: center;
+}

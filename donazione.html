@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AS8lCY1Ybb4Qhg1mTcO9Djz2qHJn-Yy14jqSCqd6rZLXgSUCFVyNOep_ns1BLBji8uuG3FCY2uoTeGLp"></script>
+    </head>
+
+    <body style="background-color: #626771;">
+        <h1 style="text-align: center; padding-top: 100px; color: #cfd3e0;">
+            Grazie infinite per ogni singolo euro.
+        </h1>
+        <center style="padding-top: 150px;">
+            <div style="background-color: green; display: none;" id="transition"> Grazie per aver aquistato CustomCommads
+            </div>
+            <input type="txt" id="payInput" size="20px" placeholder="Inserisci una somma"/> 
+            <button onclick="generatePayment(document.getElementById('payInput').value)">
+                <span style="background-color: darkgreen; border: darkgreen 2px solid; border-radius: 20px;">
+                    Conferma
+                </span>
+            </button>
+            <br>
+            <div id="paypal-button-container"></div>
+
+            <script>
+                function generatePayment(value){
+                    if(value==""){
+                        alert("Inserisci una somma perfavore!");
+                        return;
+                    }
+                paypal.Buttons({
+                    createOrder: function(data, actions){
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: value
+                                }
+                            }]
+                        })
+                    },
+                OnApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        document.getElementById("transition").style.display = "block";
+                    });
+                }
+            }).render('#paypal-button-container');
+                }
+            </script>
+        </center>
+    </body>
+</html>
